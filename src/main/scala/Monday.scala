@@ -5,24 +5,16 @@ object Monday extends App {
   var a = "hello world"
   println(a)
 
-  def printWord(a: String) {
-    println(a)
-  }
+  def printWord(a: String)= println(a)
 
   printWord("Hello world")
 
-  def helloWorld2(): String = {
-    val a = "hello world"
-    a
-  }
+  def helloWorld2():String = "hello world"
 
   println(helloWorld2())
 
 
-  def strings(a: String, b: Int): String = {
-    val c = a.substring(a.length - b, a.length)
-    c
-  }
+  def strings(a: String, b: Int): String = a.substring(a.length - b, a.length)
 
   println(strings("hello", 3))
 
@@ -64,19 +56,19 @@ object Monday extends App {
 
   println(conditionals(0, 3, 3 != 3))
 
-  def iteration(a: String, b: Int) {
+  def iteration(myString: String, b: Int) {
     for (i <- 1 to b) {
-      println(a)
+      println(myString)
     }
   }
 
   iteration("H", 4)
 
 
-  def iteration2(a: String, b: Int) {
+  def iteration2(myString: String, b: Int) {
     for (i <- 1 to b) {
       for (i <- 1 to b) {
-        print(a)
+        print(myString)
       }
       print("\n")
     }
@@ -84,16 +76,16 @@ object Monday extends App {
 
   iteration2("H", 4)
 
-  def iteration3(a: String, b: String, c: Int) {
+  def iteration3(firstWord: String, secondWord: String, c: Int) {
     for (i <- 1 to c) {
       if (i % 3 == 0 && i % 5 == 0) {
-        print(a + b)
+        print(firstWord + secondWord)
       }
       else if (i % 3 == 0) {
-        print(a)
+        print(firstWord)
       }
       else if (i % 5 == 0) {
-        print(b)
+        print(secondWord)
       }
       else {
         print(i)
@@ -107,21 +99,21 @@ object Monday extends App {
   iteration3("Fizz", "Buzz", 15)
   println("")
 
-  def recursion(a: String, b: Int) {
+  def recursion(myString: String, b: Int) {
     if (b > 0) {
-      println(a)
-      recursion(a, b - 1)
+      println(myString)
+      recursion(myString, b - 1)
     }
   }
 
   recursion("H", 4)
 
-  def recursion2(a: String, b: Int) {
+  def recursion2(myString: String, b: Int) {
 
     val columns = b
     if (b > 0) {
-      println(a*b)
-      recursion2(a, b - 1)
+      println(myString*b)
+      recursion2(myString, b - 1)
 
     }
     else {
@@ -134,16 +126,16 @@ object Monday extends App {
     var output = ""
     logicChecks(a, b, c)
 
-    def logicChecks(a: String, b: String, c: Int) {
+    def logicChecks(firstWord: String, secondWord: String, c: Int) {
       if (c > 0) {
         if (c % 3 == 0 && c % 5 == 0) {
-          output = a + b + output
+          output = firstWord + secondWord + output
         }
         else if (c % 3 == 0) {
-          output = a + output
+          output = firstWord + output
         }
         else if (c % 5 == 0) {
-          output = b + output
+          output = secondWord + output
         }
         else {
           output = c.toString + output
@@ -151,7 +143,7 @@ object Monday extends App {
         if(c!=1){
           output = "," + output
         }
-        logicChecks(a, b, c - 1)
+        logicChecks(firstWord, secondWord, c - 1)
       }
     }
     output
