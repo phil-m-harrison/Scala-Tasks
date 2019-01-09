@@ -1,4 +1,5 @@
 object Monday extends App {
+  /*
   //tasks completed up to iteration 4
   println("Hello world")
 
@@ -157,4 +158,28 @@ object Monday extends App {
     output
   }
   println(recursion3("Fizz", "Buzz", 15))
+*/
+  def patternMatching1(num1:Int, num2:Int, check:Boolean):Int={
+    num1 match {
+      case 0 => {
+        num2 match {
+          case 0 => 0
+          case _ => num2
+        }
+      }
+      case _ => {
+        num2 match{
+          case 0 => num1
+          case _ => {
+            check match{
+              case true => num1+num2
+              case false => num1*num2
+            }
+          }
+        }
+      }
+    }
+  }
+  println(patternMatching1(7,0, false))
+
 }
