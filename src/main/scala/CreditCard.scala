@@ -28,16 +28,14 @@ object CreditCard extends App{
     var changingID = id
     var returnval = 0
     for(i<- id.toString.length to 0 by -2){
-      var remainder = changingID%10
-      returnval+=remainder.toInt
+      returnval+=(changingID%10).toInt
       changingID = changingID/100
     }
     changingID=id
     for(i<- (id.toString.length-1) to 0 by -2){
-      var remainder = (changingID/10)%10
-      var changingIDremainder = 2*remainder.toInt
-      if(changingIDremainder>9) returnval+=changingIDremainder/10 + changingIDremainder%10
-      else returnval+= changingIDremainder
+      var doubledRemainder = 2*((changingID/10)%10).toInt
+      if(doubledRemainder>9) returnval+=doubledRemainder/10 + doubledRemainder%10
+      else returnval+= doubledRemainder
       changingID = changingID /100
     }
     returnval%10==0
