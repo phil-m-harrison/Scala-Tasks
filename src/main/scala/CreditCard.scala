@@ -1,19 +1,4 @@
 object CreditCard extends App{
-//  def idChecker(id:Long):Boolean={
-//    var sumCheck = 0
-//    for(i<- id.toString.length-1 to 0 by -1){
-//      if((id.toString.length+i)%2==0){
-//        var adder = id.toString.substring(i,i+1)
-//        var doubleCheck = 2*adder.toInt
-//        if(doubleCheck>9) sumCheck += doubleCheck.toString.substring(0,1).toInt + doubleCheck.toString.substring(1,2).toInt
-//        else sumCheck += doubleCheck
-//      }
-//      else sumCheck+=id.toString.substring(i,i+1).toInt
-//    }
-//    sumCheck%10==0
-//  }
-//  var idTest = 49927398716L
-//
   def idChanger(id:Long)={
     if(idChecker(id)) println(id)
     else{
