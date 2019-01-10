@@ -24,8 +24,8 @@ object Keyboard extends App {
         if(matchCount>dictCharLocation) validCharCount+=1
       }
       if (matchCount == dictionary(dictWordNum).length && matchCount>=highCount && validCharCount>=dictionary(dictWordNum).length){
-          highCount=matchCount
-          longestWord = dictionary(dictWordNum)
+        highCount=matchCount
+        longestWord = dictionary(dictWordNum)
       }
       matchCount=0
       validCharCount=0

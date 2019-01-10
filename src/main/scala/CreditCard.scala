@@ -7,17 +7,17 @@ object CreditCard extends App{
         }
     }
   }
-  idChanger(49927398718L)
+  idChanger(4992739583L)
 
   def idChecker(id:Long):Boolean={
     var changingID = id
     var returnval = 0
-    for(i<- id.toString.length to 0 by -2){
+    for(i<- 0 to id.toString.length/2){
       returnval+=(changingID%10).toInt
       changingID = changingID/100
     }
     changingID=id
-    for(i<- (id.toString.length-1) to 0 by -2){
+    for(i<- 0 to (id.toString.length-1)/2){
       var doubledRemainder = 2*((changingID/10)%10).toInt
       if(doubledRemainder>9) returnval+=doubledRemainder/10 + doubledRemainder%10
       else returnval+= doubledRemainder
