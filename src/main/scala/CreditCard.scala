@@ -2,12 +2,12 @@ object CreditCard extends App{
   def idChanger(id:Long)={
     if(idChecker(id)) println(id)
     else{
-        for(i<- 1L to 9L){
-          if(idChecker((id.toString+i.toString).toLong)) println(id.toString+i.toString)
+        for(i<- 0L to 9L){
+          if(idChecker(id+i)) println(id+i)
         }
     }
   }
-  idChanger(4992739583L)
+  idChanger(9090909090L)
 
   def idChecker(id:Long):Boolean={
     var changingID = id

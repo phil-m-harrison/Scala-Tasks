@@ -1,3 +1,4 @@
+import scala.io.StdIn._
 object Monday extends App {
 
   println("Hello world")
@@ -111,20 +112,5 @@ object Monday extends App {
     output
   }
   println(recursion3("Fizz", "Buzz", 15))
-
-  val primeNumberList = 1 to 100 toList
-  def primeNumberChecker(number:Int):Int={
-    var primeCount=0
-    var i =2
-    for(i<- 2 to math.ceil(math.sqrt(number)).toInt){
-      if(number%i==0) primeCount+=1
-    }
-    if(primeCount<1) 1
-    else 0
-  }
-  var primeCount=0
-  primeNumberList.foreach(test => primeCount+=primeNumberChecker(test))
-
-  println(primeCount)
 
 }
