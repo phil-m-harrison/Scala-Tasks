@@ -30,11 +30,14 @@ object Thursday extends App {
   println("Please enter a number to check if it is a factorial of another number")
   isFactorial(readInt)
 
-  val alphabet = 'a' to 'z'
-  println(alphabet)
-  val plain = alphabet.toArray
-  val cipher = alphabet.reverse.toArray
-  println("Enter a string to encode or decode")
-  val testString = readLine
-  for(i<-0 until testString.length; j<- 0 until plain.length if(testString.substring(i,i+1).charAt(0)==plain(j))) print(cipher(j))
+  def cypher():Unit={
+    val alphabet = 'a' to 'z'
+    println("\nEnter a string to encode or decode")
+    def cypherPrinter(testString:String, plain:Array[Char], cypher:Array[Char]):Unit= {
+      for(i<-0 until testString.length; j<- 0 until plain.length if testString.substring(i,i+1).charAt(0)==plain(j)) print(cypher(j))
+    }
+    cypherPrinter(readLine, alphabet.toArray, alphabet.reverse.toArray)
+    cypher()
+  }
+  cypher()
 }
