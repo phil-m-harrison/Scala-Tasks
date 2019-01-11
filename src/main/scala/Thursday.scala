@@ -33,10 +33,8 @@ object Thursday extends App {
   def cypher():Unit={
     val alphabet = 'a' to 'z'
     println("\nEnter a string to encode or decode")
-    def cypherPrinter(testString:String, plain:Array[Char], cypher:Array[Char]):Unit= {
-      for(i<-0 until testString.length; j<- 0 until plain.length if testString.substring(i,i+1).charAt(0)==plain(j)) print(cypher(j))
-    }
-    cypherPrinter(readLine, alphabet.toArray, alphabet.reverse.toArray)
+    def cypherPrinter(testString:String, plain:Array[Char]):Unit= for(i<-0 until testString.length; j<- 0 until plain.length if testString.substring(i,i+1).charAt(0)==plain(j)) print(plain(plain.length-1-j))
+    cypherPrinter(readLine, alphabet.toArray)
     cypher()
   }
   cypher()
