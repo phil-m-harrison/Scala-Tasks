@@ -1,5 +1,6 @@
+import scala.io.StdIn._
 object Monday extends App {
-  //tasks completed up to iteration 4
+
   println("Hello world")
 
   val message = "hello world"
@@ -100,8 +101,8 @@ object Monday extends App {
       if (num1 > 0) {
         num1 match{
           case a if num1 % 3 == 0 && num1 % 5 == 0 => output = firstWord + secondWord + output
-          case b if num1 % 3 == 0 => output = firstWord + output
-          case c if num1 % 5 == 0 => output = secondWord + output
+          case a if num1 % 3 == 0 => output = firstWord + output
+          case a if num1 % 5 == 0 => output = secondWord + output
           case _ => output = num1.toString + output
         }
         if(num1!=1) output = "," + output
@@ -111,4 +112,5 @@ object Monday extends App {
     output
   }
   println(recursion3("Fizz", "Buzz", 15))
+
 }
