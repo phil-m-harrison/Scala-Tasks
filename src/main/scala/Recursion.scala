@@ -7,7 +7,7 @@ object Recursion extends App{
     }
     total
   }
-  print(numberSum(1,10))
+  println(s"Number Sum: ${numberSum(1,10)}")
 
   var facTotal=1
   def factorial(count:Int, num1:Int): Int ={
@@ -18,7 +18,7 @@ object Recursion extends App{
     }
     facTotal
   }
-  print(factorial(1,10))
+  println(s"Factorial: ${factorial(1,10)}")
 
   var testArray = Array(0,5,12,7,3,6,0,1235,0,135,0,13,6,0,3)
   var zeroes = 0
@@ -29,7 +29,7 @@ object Recursion extends App{
     }
     zeroes
   }
-  println(zeroCounter(testArray,0))
+  println(s"Number of zeroes in the array: ${zeroCounter(testArray,0)}")
 
   var answer = testArray(0)
   def minElement(myArray:Array[Int], element:Int):Int={
@@ -39,7 +39,7 @@ object Recursion extends App{
     }
     answer
   }
-  println(minElement(testArray,0))
+  println(s"Smallest number in the array: ${minElement(testArray,0)}")
 
   def arrayPrinter(myArray:Array[Int], element:Int):Unit={
     if(element<myArray.length){
@@ -47,6 +47,5 @@ object Recursion extends App{
       arrayPrinter(myArray, element+1)
     }
   }
-
   arrayPrinter(testArray,0)
 }
