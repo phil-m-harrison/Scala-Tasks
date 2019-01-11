@@ -37,14 +37,14 @@ object Hangman extends App {
       val playWord = words(Random.nextInt(words.length-1))
       println(s"word is $playWord")
       //val playWord = words(Random.nextInt(words.length))
-      val printOutput = new Array[String](playWord.length)
+      val outputArray = new Array[String](playWord.length)
       for(i<-0 until playWord.length){
-        printOutput(i)="_"
+        outputArray(i)="_"
       }
-      playerGuesser(playWord, printOutput)
+      playerGuesser(playWord, outputArray)
     }
 
-    def playerGuesser(playWord:String, printOutput:Array[String]): Any ={
+    def playerGuesser(playWord:String, outputArray:Array[String]): Any ={
       println("\nPlease guess a letter")
       val guess = readLine
       var correctCount =0
@@ -54,26 +54,26 @@ object Hangman extends App {
       if(correctCount==0){
         println("Incorrect guess!")
         incorrectCount+=1
-        hangmanPrinter(playWord, incorrectCount, guess, printOutput)
-        playerGuesser(playWord, printOutput)
+        hangmanPrinter(playWord, incorrectCount, guess, outputArray)
+        playerGuesser(playWord, outputArray)
       }
       else{
         println("Correct guess!")
-        hangmanPrinter(playWord,  incorrectCount, guess, printOutput)
-        playerGuesser(playWord, printOutput)
+        hangmanPrinter(playWord,  incorrectCount, guess, outputArray)
+        playerGuesser(playWord, outputArray)
       }
       for(i<- 0 until playWord.length){
-        if(playWord.substring(i,i+1)==guess) printOutput(i)=guess
-        print(printOutput(i)+" ")
+        if(playWord.substring(i,i+1)==guess) outputArray(i)=guess
+        print(outputArray(i)+" ")
       }
-      if(printOutput.count(_ =="_")==0){
+      if(outputArray.count(_ =="_")==0){
         println("\nYou win!")
         startGame()
       }
-      playerGuesser(playWord, printOutput)
+      playerGuesser(playWord, outputArray)
     }
 
-    def hangmanPrinter(playWord:String, incorrectCount:Int, letterGuess:String, printOutput:Array[String])={
+    def hangmanPrinter(playWord:String, incorrectCount:Int, letterGuess:String, outputArray:Array[String])={
       incorrectCount match{
         case 0 => println("6 incorrect guesses remaining")
         case 1 => println("__________")

@@ -48,4 +48,15 @@ object Recursion extends App{
     }
   }
   arrayPrinter(testArray,0)
+
+  var intTotal = 0
+  def integerPrinter(number:Int):Unit={
+    var positiveNumber = math.abs(number)
+    if(positiveNumber>0){
+      intTotal+=positiveNumber%10
+      integerPrinter(positiveNumber/10)
+    }
+    else println(intTotal)
+  }
+  integerPrinter(-26)
 }
