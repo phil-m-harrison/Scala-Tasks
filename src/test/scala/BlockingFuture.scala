@@ -1,6 +1,6 @@
-import scala.concurrent.{Await, Future}
-import scala.concurrent.duration._ // Allows us to define time in the "10 seconds"format
-import scala.concurrent.ExecutionContext.Implicits.global // Is required
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration._
+import scala.concurrent.{Await, Future} // Is required
 
 object BlockingFuture extends App {
   def sleep(time: Long) {Thread.sleep(time)}
